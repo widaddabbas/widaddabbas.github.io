@@ -5,19 +5,20 @@
 
 body{text-align: center; background-color: #e3e8cc;}
 
-.top{overflow: visible; position: fixed; top: 0; width:100%;}
+.top{overflow: visible; position: fixed; top: 0; width:100%;;}
 .bot{overflow: visible; position: fixed; bottom:0; width:100%;}
 
 .dropbtn {
-  background: none;  color: #00CC66; height:100%;
-  border: none; cursor: pointer; font-size:15px;
+  background: none;  color: #00CC66; width:100%; position:absolute;
+  border: none; cursor: pointer; font-size:15px; top:50%; margin:0;
     font-weight: bold;   font-family: "Times New Roman", Times, serif;
+    transform: translate(0, -50%);
 }
 .dropdown {
-  position: relative; display: inline-block;
+  position: fixed; display: flex;height:33.33%;top:33.33%; vertical-align:center; text-align:center; width:100%;
 }
 .dropdown-content {
-  display: none;  position: absolute; width:100%;
+  display: none;  position: relative; width:100%;
   background-color: #e3e8cc; z-index: 1;
 }
 .dropdown-content a {
@@ -62,12 +63,6 @@ body{text-align: center; background-color: #e3e8cc;}
    <h2>tW's Wddeaeisib</h2>
    <h1>Waebseitds 'Wid</h1>
 </div>
-
-</body>
-</html>
-
-
-
 
 </body>
 </html>
