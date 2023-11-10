@@ -1,28 +1,60 @@
 <html>
-
 <head>
-  <title>Website</title>
+ <title>Website</title>
+ <style>
+  html {background: url(img/home.jpg) no-repeat center fixed; background-size: cover;}
+  body {color:white; text-align:center;}
   
-  <style>
-    body{background-color: rgb(227,232,204);}
-  </style>
+  .top {overflow: visible; position: fixed; top: 0; width:100%;}
+  .bot {overflow: visible; position: fixed; bottom:0; width:100%;}
+  
+  .dropbtn {
+   background:none; color:#00CC66; cursor:pointer; border:none;
+   font-size:15px; font-weight:bold; font-family:"Times New Roman",Times,serif;
+   width:100%; position:absolute; top:50%; margin:0; transform:translate(0,-50%);
+  }
+  .dropdown {
+   position:fixed; display:flex; height:33.33%; top:33.33%; vertical-align:center; text-align:center; width:100%;
+  }
+  .dropdown-content {
+   display:none;  position:relative; width:100%; background-color:#e3e8cc; z-index:1;
+  }
+  .dropdown-content a {
+   color:black; padding:2%; text-decoration:none; display:block; 
+   font-size:15px; font-weight:bold; font-family:"Times New Roman",Times,serif;
+  }
+  .dropdown-content a:hover {background-color:#00CC66; color:white;}
+  .dropdown:hover .dropdown-content {display:block;}
+ </style>
 </head>
-  
 <body>
-  <h1>Website</h1>
-  <h2>Website</h2>
-  <h3>Website</h3>
-  <h4>Website</h4>
-  <h5>Website</h5>
-  <h6>Website</h6>
-  <p>website</p>
-  <br>
-  <br>
-  <nav>
-    <a href="index.html">Website</a>
-    <a href="portfolio.html">Port</a>
-    <a href="pscience.html">Psi</a>
-  </nav>
-</body>
 
+ <div class="top">
+  <h1>Wb'dWa ideistes</h1>
+  <h2>ddsWb eaei'sWti</h2>
+  <h3>WWtddsies ai'eb</h3>
+  <h4>Wdisa stei'Wbed</h4>
+  <h5>eWadtiiW'edb ss</h5>
+  <h6>sWit'ed dbeWsai</h6>
+ </div>
+
+ <div class="dropdown">
+  <div class="dropdown-content">
+   <a href="portfolio.html">Art</a> <!--photography-->
+   <a href="pscience.html">Academia</a> <!--research-->
+   <a href="protection.html">Other</a> <!--fun-->
+  </div>
+  <button class="dropbtn">Widad's Website</button>
+ </div>
+
+ <div class="bot">
+  <h6>easbieWt sddW'i</h6>
+  <h5>itiW Wesb'sdeda</h5>
+  <h4>isdb d'eaetiWWs</h4>
+  <h3>Wdaedi sW'tesib</h3>
+  <h2>tW's Wddeaeisib</h2>
+  <h1>Waebseitds 'Wid</h1>
+ </div>
+
+</body>
 </html>
