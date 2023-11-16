@@ -10,10 +10,12 @@
       color: white; 
     }
 
-    html {cursor: none; overflow: hidden;} /* https://codepen.io/jeffersonlam/pen/NqrWeL OR https://www.winterwind.com/tutorials/css/60 */
-    .box {position: absolute; animation: rotate 9s infinite linear; margin: 0; overflow: hidden;}
-    @keyframes rotate {100% {transform: rotate(360deg);}}
-    
+    /* https://codepen.io/jeffersonlam/pen/NqrWeL OR https://www.winterwind.com/tutorials/css/60 */
+    .star {position: fixed; pointer-events: none;}
+    .star:before,.star:after {position: absolute; top: 0; left: 0; content: '\2726'; font-size: 9px;}
+    .star:before {color: transparent; text-shadow: 0 0 3px rgb(250, 250, 174);}
+    .star:after {background: yellow; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+        
   </style>
 </head>
   
@@ -30,81 +32,24 @@
   </nav>
 
   <script>
-    'use strict';
+    window.addEventListener('mousemove', function(e) {
+      var arr = [1, 0.9, 0.8, 0.5, 0.2];
 
-    var Trail = function(options) {
-      this.size        = options.size || 50;
-      this.trailLength = options.trailLength || 20;
-      this.interval    = options.interval || 15;
-      this.hueSpeed    = options.hueSpeed || 6;
-    
-      this.boxes = [];
-      this.hue   = 0;
-      this.mouse = {
-        x : window.innerWidth/2,
-        y : window.innerHeight/2
-      };
-    this.init = function() {
-      for (var i = 0; i < this.trailLength; i++) {
-        this.boxes[i]              = document.createElement('div');
-        this.boxes[i].className    = 'box';
-        this.boxes[i].style.width  = this.size + 'px';
-        this.boxes[i].style.height = this.size + 'px';
-        document.body.appendChild(this.boxes[i]);
-      }
-      
-      var self = this;
-  
-      // document.onmousemove = function() {
-      //   event = event || window.event;
-      //   self.mouse.x = event.clientX;
-      //   self.mouse.y = event.clientY;
-      //   console.log(event);
-      // };
-  
-      //Periodically update mouse tracing and boxes
-      setInterval(function(){
-        self.updateHue();
-        self.updateBoxes();
-      }, this.interval);
-    }
-  
-    //Update hue and constrain to 360
-    this.updateHue = function() {
-      this.hue = (this.hue + this.hueSpeed) % 360;
-    }
-  
-    //Update box positions and stylings
-    this.updateBoxes = function() {
-      for (var i = 0; i < this.boxes.length; i++) {
-        if (i+1 === this.boxes.length) {
-          this.boxes[i].style.top             = this.mouse.y - this.size/2 + 'px';
-          this.boxes[i].style.left            = this.mouse.x - this.size/2 + 'px';
-          this.boxes[i].style.backgroundColor = 'hsl(' + this.hue + ', 90%, 50%)';
-        } else {
-          this.boxes[i].style.top             = this.boxes[i+1].style.top;
-          this.boxes[i].style.left            = this.boxes[i+1].style.left;
-          this.boxes[i].style.backgroundColor = this.boxes[i+1].style.backgroundColor;
-        }
-      }
-    }
-  }
-  
-  var options = {
-    trailLength: 15,
-    size: 30,
-    interval: 3,
-    hueSpeed: 3
-  };
-  var trail = new Trail(options);
-  trail.init();
-  
-  //Hotfix
-  document.onmousemove = function() {
-    trail.mouse.x = event.clientX;
-    trail.mouse.y = event.clientY;
-  };
-    
+      arr.forEach(function(i) {
+        var x = (1 - i) * 75;
+        var star = document.createElement('div');
+
+        star.className = 'star';
+        star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
+        star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
+
+        document.body.appendChild(star);
+        
+        window.setTimeout(function() {
+          document.body.removeChild(star);
+        }, Math.round(Math.random() * i * 600));
+      }); 
+    }, false);
   </script>  
   
 </body>
