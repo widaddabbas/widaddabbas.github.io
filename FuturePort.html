@@ -1,0 +1,98 @@
+<html>
+<head>
+ <title>Portfolio</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <style>
+     
+     body,html {height: 100%; margin: 0;}
+     * {box-sizing: border-box;}
+     
+     #bgr {
+         background: #bbc49a url("dcr/port.jpg") no-repeat fixed center bottom;
+         background-size: cover;
+         min-height: 44%;
+     }
+     
+     .header {
+         text-align: center;
+         padding: 10%;
+         height: 56%;
+         background: #bbc49a url("dcr/port.jpg") no-repeat fixed center bottom;
+         background-size: cover;
+     }
+    
+     #row {
+         display: flex;
+         flex-wrap: wrap;
+         padding: 0 4px;
+         background: transparent;
+     }
+     /* Create four equal columns that sits next to each other */
+     .column {
+         flex: 25%;
+         max-width: 25%;
+         padding: 0 4px;
+     }
+     .column img {
+         margin-top: 8px;
+         vertical-align: middle;
+         width: 100%;
+     }
+     /* Responsive layout - makes a two column-layout instead of four columns */
+     @media screen and (max-width: 800px) {
+         .column {
+             flex: 50%;
+             max-width: 50%;
+       }}
+     
+ </style>
+</head>
+<body>
+
+ <!-- Header -->
+ <div class="header">
+     <h1>Image Grid</h1>
+     <p>Resize the browser window to see the responsive effect.</p>
+ </div>
+    
+ <div id="bgr"></div>
+    
+ <div id="row">
+     <div class="column">
+         <img src="img/home.jpg">
+     </div>
+     <div class="column">
+         <img src="img/psci.jpg">
+     </div>
+     <div class="column">
+         <img src="img/poth.jpg">
+     </div>
+     <div class="column">
+         <img src="img/home.jpg">
+     </div>
+ </div>
+        
+ <script>
+     
+     const flex = document.getElementById("row");
+     const bgr = document.getElementById("bgr");
+     bgr.style.height = flex.offsetHeight + 'px';
+     flex.style.transform = 'translateY(-' + bgr.offsetHeight + 'px)';
+       
+    window.addEventListener('scroll', function() {
+        let num = (window.scrollY/window.innerHeight)*4;
+        bgr.style.webkitFilter = 'blur(' + num + 'px)'
+        bgr.style.height = flex.offsetHeight + 'px';
+        flex.style.transform = 'translateY(-' + bgr.offsetHeight + 'px)';
+        })
+
+    window.addEventListener('resize', function() {
+        bgr.style.height = flex.offsetHeight + 'px';
+        flex.style.transform = 'translateY(-' + bgr.offsetHeight + 'px)';
+        })
+ 
+ </script>
+ 
+</body>
+</html>
