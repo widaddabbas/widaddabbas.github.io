@@ -1,0 +1,65 @@
+<html>
+<head>
+ <title>Other</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+
+    html {background: url(dcr/poth.jpg) no-repeat center fixed; background-size: cover;}
+
+    /* https://codepen.io/jeffersonlam/pen/NqrWeL OR https://www.winterwind.com/tutorials/css/60 */
+    .star {position: fixed; pointer-events: none;}
+    .star:before,.star:after {position: absolute; top: 0; left: 0; content: '\2726'; font-size: 9px;}
+    .star:before {color: transparent; text-shadow: 0 0 3px rgb(250, 250, 174);}
+    .star:after {background: yellow; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    
+    .container {background: url(dcr/poth.jpg) no-repeat center fixed; background-size: cover;
+        position: fixed; height: 100vh; width: 100vw;}
+    .text {
+        margin: auto; padding: 10px; width: 70%;
+        position: absolute; top: 45%; left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font: bold 10vw "Times New Roman",serif;
+        background: white; color: black;
+        mix-blend-mode: exclusion;
+        }
+     
+    .nav {text-align: center; position: absolute; top: 65%;
+        left: 50%; transform: translateX(-50%);}
+     a {background: white;}
+    
+    
+ </style>
+</head>
+<body>
+
+ <div class="container">
+     <div class="text">
+         <img src="dcr/shrb.svg" style="width:100%;">
+ </div></div>
+    
+ <div class="nav">
+     <a href="index.html">Home</a>
+     <a href="portfolio.html">Portfolio</a>
+     <a href="psience.html">Research</a>
+ </div>
+
+ <script>
+     window.addEventListener('mousemove', function(e) {
+         var arr = [1, 0.9, 0.8, 0.5, 0.2];
+         arr.forEach(function(i) {
+             var x = (1 - i) * 75;
+             var star = document.createElement('div');
+             star.className = 'star';
+             star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
+             star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
+             document.body.appendChild(star);
+             window.setTimeout(function() {
+                 document.body.removeChild(star);
+             }, Math.round(Math.random() * i * 600));
+        });
+      }, false);
+ </script>
+ 
+</body>
+</html>

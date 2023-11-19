@@ -1,57 +1,36 @@
 <html>
-
 <head>
-  <title>Port</title>
-  <style> 
-    html { 
-      background: url(dcr/port.jpg) no-repeat center fixed; background-size: cover;
-    }
-    body { 
-      color: white; 
-    }
+ <title>Portfolio</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
 
-    /* https://codepen.io/jeffersonlam/pen/NqrWeL OR https://www.winterwind.com/tutorials/css/60 */
-    .star {position: fixed; pointer-events: none;}
-    .star:before,.star:after {position: absolute; top: 0; left: 0; content: '\2726'; font-size: 9px;}
-    .star:before {color: transparent; text-shadow: 0 0 3px rgb(250, 250, 174);}
-    .star:after {background: yellow; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
-        
-  </style>
+    html {background: url(dcr/port.jpg) no-repeat center fixed; background-size: cover;}
+    
+    .box{
+        position: fixed; z-index: 2; top: 50%; left: 50%; transform: translate(-50%, -50%);
+        background: rgba(0,0,0, 0.7);
+        width: 70vw; height: 70vh;
+        text-align: center;
+        color: white;
+        }
+    .text {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
+    
+     a {background: white;}
+
+ </style>
 </head>
-  
 <body>
-  <!--img src="img/port.jpg" alt="Dinosaur" 
-    width="1024" height="683" /-->
-  <br>
-  <br>
-  <nav>
-    <a href="index.html">Website</a>
-    <a href="portfolio.html">Art</a>
-    <a href="pscience.html">Academia</a>
-    <a href="protection.html">Other</a>
-  </nav>
 
-  <script>
-    window.addEventListener('mousemove', function(e) {
-      var arr = [1, 0.9, 0.8, 0.5, 0.2];
+ <div class="box">
+     <div class="text">
+     <p style="font-size:30px; font-weight: bolder;">Coming Sooner</p>
+     <hr style="width:50%;margin:auto"><br><br>
+     <a href="index.html">Home</a><br><br>
+     <a href="https://www.instagram.com/widad.dabbas/"><img src="dcr/logr.svg" style="height:50px; background:white"></a><br><br>
+     <a href="psience.html">Research</a><br><br>
+     <a href="pother.html">Other</a>
+     </div>
+ </div>
 
-      arr.forEach(function(i) {
-        var x = (1 - i) * 75;
-        var star = document.createElement('div');
-
-        star.className = 'star';
-        star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
-        star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
-
-        document.body.appendChild(star);
-        
-        window.setTimeout(function() {
-          document.body.removeChild(star);
-        }, Math.round(Math.random() * i * 600));
-      }); 
-    }, false);
-  </script>  
-  
 </body>
-
 </html>
