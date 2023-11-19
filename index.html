@@ -1,31 +1,42 @@
 <html>
 <head>
- <title>Widad's Website</title>
+ <title>Website</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <style>
-  html {background: url(img/home.jpg) no-repeat center fixed; background-size: cover;}
-  body {color:white; text-align:center;}
+     
+     html {background: #e3e8cc url(img/home.jpg) no-repeat center fixed; background-size: cover;}
+     
+     body {color: white; text-align: center;}
   
-  .top {overflow: visible; position: fixed; top: 0; width:100%;}
-  .bot {overflow: visible; position: fixed; bottom:0; width:100%;}
-  
-  .dropbtn {
-   background:none; color:#00CC66; cursor:pointer; border:none;
-   font-size:15px; font-weight:bold; font-family:"Times New Roman",Times,serif;
-   width:100%; position:absolute; top:50%; margin:0; transform:translate(0,-50%);
-  }
-  .dropdown {
-   position:fixed; display:flex; height:33.33%; top:33.33%; vertical-align:center; text-align:center; width:100%;
-  }
-  .dropdown-content {
-   display:none;  position:relative; width:100%; background-color:#e3e8cc; z-index:1;
-  }
-  .dropdown-content a {
-   color:black; padding:2%; text-decoration:none; display:block; 
-   font-size:15px; font-weight:bold; font-family:"Times New Roman",Times,serif;
-  }
-  .dropdown-content a:hover {background-color:#00CC66; color:white;}
-  .dropdown:hover .dropdown-content {display:block;}
-
+     .top {overflow: visible; position: fixed; top: 0; width: 100%;}
+     .bot {overflow: visible; position: fixed; bottom: 0; width: 100%;}
+     .hold {height: 100%; display: flex; justify-content: center; align-items: center;}
+     .dropdown {display: flex; justify-content: center; align-items: center;}
+     
+     .dropbtn {
+        padding: 16px;
+        color: #00CC66;
+        background: none;
+        border: outset navajowhite;
+        /*border-radius: 30px; border: none;*/
+        font: bolder 30px "Times New Roman",serif;
+        }
+     .dropdown-content {
+        display: none; position: absolute; z-index: 1;
+        background: #e3e8cc;
+        min-width: 255px;
+        }
+     .dropdown-content a {
+        display: block; text-decoration: none;
+        padding: 10px;
+        color: orange;
+        border-radius: 30px;
+        font: bold 25px "Times New Roman",serif;
+        }
+     
+     .dropdown:hover .dropdown-content {display:block;}
+     .dropdown-content a:hover {background: #00CC66; color: blue;}
+     
  </style>
 </head>
 <body>
@@ -39,6 +50,7 @@
   <h6>sWit'ed dbeWsai</h6>
  </div>
 
+ <div class= "hold">
  <div class="dropdown">
   <div class="dropdown-content">
    <a href="portfolio.html">Art</a> <!--photography-->
@@ -47,7 +59,8 @@
   </div>
   <button class="dropbtn">Widad's Website</button>
  </div>
-
+ </div>
+ 
  <div class="bot">
   <h6>easbieWt sddW'i</h6>
   <h5>itiW Wesb'sdeda</h5>
@@ -56,6 +69,7 @@
   <h2>tW's Wddeaeisib</h2>
   <h1>Waebseitds 'Wid</h1>
  </div>
- 
+
 </body>
 </html>
+
