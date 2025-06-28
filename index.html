@@ -5,67 +5,59 @@
  <style>
      
      html {background: #ffffff url(dcr/rumm.png) no-repeat center fixed; background-size: cover;}
+
+    /* https://codepen.io/jeffersonlam/pen/NqrWeL OR https://www.winterwind.com/tutorials/css/60 
+      .star {position: fixed; pointer-events: none;}
+      .star:before,.star:after {position: absolute; top: 0; left: 0; content: '\2726'; font-size: 9px;}
+      .star:before {color: transparent; text-shadow: 0 0 3px rgb(250, 250, 174);}
+      .star:after {background: yellow; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+    */
      
      body {color: #00cc66; text-align: center;}
 
-     .top {overflow: visible; position: fixed; top: 5%; width: 100%; background-color: #5800cc00;}
+     .top {overflow: visible; position: fixed; top: 0%; width: 100%; background-color: #5800cc00;}
      .bot {overflow: visible; position: fixed; bottom: 20%; width: 100%; z-index: -1; background-color: #4a10be;}
-     .mid {overflow: visible; position: fixed; top: 17%; width: 100%; background-color: #5800cc00;}
+     .mid {overflow: visible; position: fixed; top: 12%; width: 100%; background-color: #5800cc00;}
 
      .butt {
-         background-color: #00cc66; /* Green */
-         border: none;
-         color: #ffffff;
-         padding: 16px 32px;
-         text-align: center;
-         text-decoration: none;
+         color: #ffffff; background-color: #00cc66; /* Green */
+         border: none; border-radius: 0px;
+         margin: 4px 2px; padding: 16px 32px;
+         text-align: center; text-decoration: none; font: bold 25px "Times New Roman",serif;
          display: inline-block;
-         font: bold 25px "Times New Roman",serif;
-         margin: 4px 2px;
-         border-radius: 0px;
          }
-
-      .butta {color: #00cc66; background: #eef2df00 /*url(dcr/home.jpg)*/; border: 2px outset #e3e9ce; }
+      .butta {color: #00cc66; background: #eef2df00 /*url(dcr/home.jpg)*/; border: 2px outset #e3e9ce00; }
       .butta:hover {color: blue; background-color: #00cc66; }
 
-      .button2 {color: black; background-color: white; border: 2px solid #008CBA; }
-      .button2:hover {color: white; background-color: #008CBA; }
+      a.but {padding: 0px 10px; word-wrap: normal; display: inline-block;}
+      a.but:link {color:#000000;}
+      a.but:visited {color:blue;}
+      a.but:hover {color:orange; text-decoration:underline;}
 
-     /*.link {
-         position: absolute;
-         width: 100%;
-         height: 100%;
-         top: 0;
-         left: 0;
-         z-index: 1;
-         }*/
-         
  </style>
 </head>
 <body>
     
  <div class="top">
 
-     <h2>Welcome to Widad's Website</h2>
+     <h1>Welcome to Widad's Website</h1>
 
  </div>
 
 
  <div class= "mid">
+   
+    <h3> <a class="but" href="https://widaddabbas.github.io/pother" target="_blank">About</a>
+         <a class="but" href="https://widaddabbas.github.io/pother" target="_blank">Research</a>
+         <a class="but" href="https://widaddabbas.myportfolio.com/" target="_blank">Portfolio</a> 
+         <a class="but" href="https://widaddabbas.github.io/blog/" target="_blank">Blog</a>
+    </h3>
 
-   <!-- <a href="psience.html"> <button class="butt butta">
-      Research
+    <!-- <a href="https://github.com/widaddabbas" target="_blank"> <button class="butt butta">
+      BUTTONS
     </button></a> -->
-    
-   <a href="https://widaddabbas.github.io/blog/"> <button class="butt butta">
-      Writings
-    </button></a>
 
-   <a href="https://widaddabbass.myportfolio.com"> <button class="butt butta">
-      Portfolio
-    </button></a>
-
-   <!-- <a href="pother.html" style="padding:0px"> <button class="butt butta">
+    <!-- <a href="pother.html" style="padding:0px"> <button class="butt butta">
       <img style="width:100%;height:45px;" src="dcr/shro.svg">
     </button></a> -->
 
@@ -73,16 +65,33 @@
     <a href="portfolio.html"><button class="butt button4">Gray</button></a>
     <a href="pother.html"><button class="butt button5">Black</button></a> -->
 
-   <br><br>
-   <a href="https://www.linkedin.com/in/widad-dabbas/"><img src="dcr/loin.svg" style="height:35px; background:#ffffff00"></a>
-   <a href="https://www.instagram.com/widad.dabbas/"><img src="dcr/logr.svg" style="height:35px; background:#ffffff00"></a>
-   <a href="https://www.github.com/widaddabbas"><img src="dcr/logit.svg" style="height:35px; background:#ffffff00"></a>
+    <br>
+    <a href="https://www.linkedin.com/in/widad-dabbas/"><img src="dcr/loin.svg" style="height:37px; background:#ffffff00"></a>
+    <a href="https://www.instagram.com/widad.dabbas/"><img src="dcr/loam.svg" style="height:37px; background:#ffffff00"></a>
+    <a href="https://www.github.com/widaddabbas"><img src="dcr/loub.svg" style="height:37px; background:#ffffff00"></a>
    
  </div>
 
  <div class="bot">
-   Widad Dabbas™ is dedicated to learning and the stewardship of planetary good. Bonus points if this involves mathematics or the oceans.
+   Widad Dabbas is dedicated to learning and the stewardship of good. Bonus points if this involves mathematics, biology, mud or sea.
  </div>
+
+ <script>
+  window.addEventListener('mousemove', function(e) {
+      var arr = [1, 0.9, 0.8, 0.5, 0.2];
+      arr.forEach(function(i) {
+          var x = (1 - i) * 75;
+          var star = document.createElement('div');
+          star.className = 'star';
+          star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
+          star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
+          document.body.appendChild(star);
+          window.setTimeout(function() {
+              document.body.removeChild(star);
+          }, Math.round(Math.random() * i * 600));
+     });
+   }, false);
+  </script>
  
 </body>
 </html>
