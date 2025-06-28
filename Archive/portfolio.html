@@ -2,35 +2,108 @@
 <head>
  <title>Portfolio</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <link rel="stylesheet" href="style.css">
  <style>
-
-    html {background: url(dcr/port.jpg) no-repeat center fixed; background-size: cover;}
+     
+     body,html {height: 100%; margin: 0;}
+     * {box-sizing: border-box;}
+     
+     #bgr {
+         background: #bbc49a url("dcr/port.jpg") no-repeat fixed center bottom;
+         background-size: cover;
+         min-height: 44%;
+     }
+     
+     .header {
+         text-align: center;
+         padding: 10%;
+         height: 56%;
+         background: #bbc49a url("dcr/port.jpg") no-repeat fixed center bottom;
+         background-size: cover;
+     }
     
-    .box{
-        position: fixed; z-index: 2; top: 50%; left: 50%; transform: translate(-50%, -50%);
-        background: rgba(0,0,0, 0.7);
-        width: 70vw; height: 70vh;
-        text-align: center;
-        color: white;
-        }
-    .text {position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;}
-    
-     a {background: white;}
-
+     #row {
+         display: flex;
+         flex-wrap: wrap;
+         padding: 0 4px;
+         background: transparent;
+     }
+     /* Create four equal columns that sits next to each other */
+     .column {
+         flex: 25%;
+         max-width: 25%;
+         padding: 0 4px;
+     }
+     .column img {
+         margin-top: 8px;
+         vertical-align: middle;
+         width: 100%;
+     }
+     /* Responsive layout - makes a two column-layout instead of four columns */
+     @media screen and (max-width: 800px) {
+         .column {
+             flex: 50%;
+             max-width: 50%;
+       }}
+     
  </style>
 </head>
 <body>
 
- <div class="box">
-     <div class="text">
-     <p style="font-size:30px; font-weight: bolder;">Coming Sooner</p>
-     <hr style="width:50%;margin:auto"><br><br>
-     <a href="index.html">Home</a><br><br>
-     <a href="psience.html">Research</a><br><br>
-     <a href="https://www.instagram.com/widad.dabbas/"><img src="dcr/logr.svg" style="height:50px; background:white"></a><br><br>
-     <a href="pother.html">Other</a>
+ <!-- Header -->
+ <div class="header">
+     <h1>Image Grid</h1>
+     <p>Resize the browser window to see the responsive effect.</p>
+ </div>
+    
+ <div id="bgr"></div>
+    
+ <div id="row">
+     <div class="column">
+         <img src="img/home.jpg">
+     </div>
+     <div class="column">
+         <img src="img/psci.jpg">
+     </div>
+     <div class="column">
+         <img src="img/poth.jpg">
+     </div>
+     <div class="column">
+         <img src="img/home.jpg">
      </div>
  </div>
 
+ <!-- Footer -->
+ <div class="footer">
+  <a class="logo">WD</a>
+  <div class="footer-right">
+    <a href="mailto:widaddabbass@gmail.com">widaddabbass@gmail.com</a>
+    <a href="https://wa.me/962797506662">+962797506662</a>
+    <a href="https://www.instagram.com/widad.dabbas/"><img src="dcr/logrw.svg" style="height: 30px;"></a>
+  </div>
+</div>
+        
+ <script>
+     
+     const flex = document.getElementById("row");
+     const bgr = document.getElementById("bgr");
+     bgr.style.height = flex.offsetHeight + 'px';
+     flex.style.transform = 'translateY(-' + bgr.offsetHeight + 'px)';
+       
+    window.addEventListener('scroll', function() {
+        let num = (window.scrollY/window.innerHeight)*4;
+        bgr.style.webkitFilter = 'blur(' + num + 'px)'
+        bgr.style.height = flex.offsetHeight + 'px';
+        flex.style.transform = 'translateY(-' + bgr.offsetHeight + 'px)';
+        })
+
+    window.addEventListener('resize', function() {
+        bgr.style.height = flex.offsetHeight + 'px';
+        flex.style.transform = 'translateY(-' + bgr.offsetHeight + 'px)';
+        })
+ 
+ </script>
+ 
 </body>
 </html>

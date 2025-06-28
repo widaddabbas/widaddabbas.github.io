@@ -1,3 +1,10 @@
+
+body {color: #00cc66; text-align: center;}
+
+.top {overflow: visible; position: fixed; top: 0%; width: 100%; background-color: #5800cc00;}
+.bot {overflow: visible; position: fixed; bottom: 20%; width: 100%; z-index: -1; background-color: #4a10be;}
+.mid {overflow: visible; position: fixed; top: 12%; width: 100%; background-color: #5800cc00;}
+
 /* Footer */
 
 .footer {

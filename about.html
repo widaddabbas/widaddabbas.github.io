@@ -1,0 +1,60 @@
+<html>
+<head>
+ <title>Widad's Website</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <style>
+     
+     html {background: #ffffff;}
+
+     /* https://codepen.io/jeffersonlam/pen/NqrWeL OR https://www.winterwind.com/tutorials/css/60 */ 
+      .star {position: fixed; pointer-events: none;}
+      .star:before,.star:after {position: absolute; top: 0; left: 0; content: '\2726'; font-size: 9px;}
+      .star:before {color: transparent; text-shadow: -8px 15px 3px #00cc663b;}
+      .star:after {background: #d0ff00; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+     
+     body {color: #00cc66; text-align: center;}
+
+     .top {overflow: visible; position: fixed; top: 0%; width: 100%; background-color: #5800cc00;}
+     .bot {overflow: visible; position: fixed; bottom: 20%; width: 100%; z-index: -1; background-color: #4a10be00;}
+     .mid {overflow: visible; position: fixed; top: 12%; width: 100%; background-color: #5800cc00;}
+
+ </style>
+</head>
+<body>
+
+ <div class="top">
+     <h2>About Widad Dabbas</h2>
+ </div>
+ 
+ <div class= "mid">
+   
+    <h3 style="color:#000000;"> Widad Dabbas has a <a href="https://widaddabbas.github.io">website</a>
+      <br><br>
+      Widad Dabbas is the person in these photos
+    </h3>
+
+ </div>
+
+ <div class="bot">
+   Widad Dabbas is dedicated to learning and the stewardship of good. Bonus points if this involves mathematics, biology, mud or sea.
+ </div>
+
+ <script>
+  window.addEventListener('mousemove', function(e) {
+      var arr = [1, 0.9, 0.8, 0.5, 0.2];
+      arr.forEach(function(i) {
+          var x = (1 - i) * 75;
+          var star = document.createElement('div');
+          star.className = 'star';
+          star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
+          star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
+          document.body.appendChild(star);
+          window.setTimeout(function() {
+              document.body.removeChild(star);
+          }, Math.round(Math.random() * i * 600));
+     });
+   }, false);
+  </script>
+ 
+</body>
+</html>
