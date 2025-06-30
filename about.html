@@ -2,42 +2,57 @@
 <head>
  <title>Widad's Website</title>
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <link rel="stylesheet" href="style.css">
  <style>
-     
-     html {background: #ffffff;}
 
      /* https://codepen.io/jeffersonlam/pen/NqrWeL OR https://www.winterwind.com/tutorials/css/60 */ 
-      .star {position: fixed; pointer-events: none;}
+     .star {position: fixed; pointer-events: none;}
       .star:before,.star:after {position: absolute; top: 0; left: 0; content: '\2726'; font-size: 9px;}
-      .star:before {color: transparent; text-shadow: -8px 15px 3px #00cc663b;}
-      .star:after {background: #eaff00bc; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
-     
-     body {color: #00cc66; text-align: center;}
+      .star:before {color: transparent; text-shadow: -6px 10px 3px #00cc663b;}
+      .star:after {background: #eaff00; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
 
-     .top {overflow: visible; position: fixed; top: 0%; width: 100%; background-color: #5800cc00;}
-     .bot {overflow: visible; position: fixed; bottom: 20%; width: 100%; z-index: -1; background-color: #4a10be00;}
-     .mid {overflow: visible; position: fixed; top: 12%; width: 100%; background-color: #5800cc00;}
+      html {margin: 0%; background: #ffffff url(dcr/self.png) no-repeat center; background-size: cover; width:100%;height:100%;position:fixed;}
+
+      div.scroll-container {
+        background-color: #ffffff80;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 10px;
+      }
+      div.scroll-container img {
+        padding: 10px;
+      }
 
  </style>
 </head>
 <body>
 
- <div class="top">
-     <h2>About Widad Dabbas</h2>
- </div>
+  <div class="top">
+    <div class="back"></div>
+    <a href="https://widaddabbas.github.io/"><img src="dcr/icons/sig.svg" style="height:65px; background:#ffffff00"></a>
+    <h2>About</h2>
+   </div>
  
  <div class= "mid">
    
-    <h3 style="color:#000000;"> Widad Dabbas has a <a href="https://widaddabbas.github.io">website</a>
-      <br><br>
+    <h4 style="color:#000000;">
       Widad Dabbas is the person in these photos
-    </h3>
+    </h4>
+
+    <div class="scroll-container">
+      <img src="dcr/about/1.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/2.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/3.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/4.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/5.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/6.png" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/7.jpeg" alt="Cinque Terre" width="auto" height="350">
+    </div>
 
  </div>
 
- <div class="bot">
-   Widad Dabbas is dedicated to learning and the stewardship of good. Bonus points if this involves mathematics, biology, mud or sea.
- </div>
+
 
  <script>
   window.addEventListener('mousemove', function(e) {

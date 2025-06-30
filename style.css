@@ -1,9 +1,16 @@
 
-body {color: #00cc66; text-align: center;}
+* {box-sizing: border-box;}
 
-.top {overflow: visible; position: fixed; top: 0%; width: 100%; background-color: #5800cc00;}
-.bot {overflow: visible; position: fixed; bottom: 20%; width: 100%; z-index: -1; background-color: #4a10be;}
-.mid {overflow: visible; position: fixed; top: 12%; width: 100%; background-color: #5800cc00;}
+body {margin: 0%; color: #00cc66; text-align: center; font-family: Georgia, serif;}
+
+.top {/*overflow:visible; position:fixed; top:0%;*/ padding-top: 20px; width: 100%; background-color: #5800cc00;}
+.mid {/*overflow:visible; position:relative;*/ width: 100%; background-color: #6012b900;}
+
+.navbar { background-color: #6012b900; text-align:center;}
+.navbar a {padding: 0px 10px; word-wrap: normal; display: inline-block;}
+.navbar a:link {color:black;}
+.navbar a:visited {color:blue;}
+.navbar a:hover {color:orange; text-decoration:underline;}
 
 /* Footer */
 
