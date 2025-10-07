@@ -3,7 +3,7 @@
 
 body {margin: 0%; color: #00cc66; text-align: center; font-family: Georgia, serif;}
 
-.top {/*overflow:visible; position:fixed; top:0%;*/ padding-top: 27px; padding-bottom: 30px; width: 100%; background-color: #ffffff;}
+.top {/*overflow:visible; position:fixed; top:0%;*/ padding-top: 50px; padding-bottom: 30px; width: 100%; background-color: #ffffff;}
 .mid {/*overflow:visible; position:relative;*/ width: 100%; background-color: #ffffff;}
 
 .navbar { background-color: #6012b900; text-align:center;}
