@@ -1,0 +1,93 @@
+<html>
+<head>
+ <title>Widad's Website</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q03T9VZ85W"></script>
+ <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Q03T9VZ85W');
+ </script>
+ <!-- Google tag (end) -->
+ 
+ <link rel="stylesheet" href="style.css">
+ <link rel="shortcut icon" type="image/x-icon" href="dcr/icons/favicon.svg">
+ 
+ <style>
+
+     /* https://codepen.io/jeffersonlam/pen/NqrWeL OR https://www.winterwind.com/tutorials/css/60 */ 
+     .star {position: fixed; pointer-events: none;}
+      .star:before,.star:after {position: absolute; top: 0; left: 0; content: '\2726'; font-size: 9px;}
+      .star:before {color: transparent; text-shadow: -6px 10px 3px #00cc663b;}
+      .star:after {background: #eaff00; -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+
+      html {margin: 0%; background: #EFF0E3}
+    
+
+      div.scroll-container {
+        background-color: #ffffff80;
+        overflow: auto;
+        white-space: nowrap;
+        padding: 10px;
+      }
+      div.scroll-container img {
+        padding: 10px;
+      }
+
+ </style>
+</head>
+<body>
+
+  <div class="top">
+    <div class="back"></div>
+    <a href="https://widaddabbas.github.io/">
+      <img src="dcr/icons/wogo.png" alt="W" height="65"></a>
+    <br/>
+    <br/>
+    <h2>About . <a href="https://widaddabbas.github.io/">
+      <img src="dcr/icons/backb.svg" alt="W" height="25"></a></h2>
+   </div>
+ 
+ <div class= "mid">
+   
+    <h4 style="color:#000000;">
+      Widad Dabbas is the person in these photos
+    </h4>
+
+    <div class="scroll-container">
+      <img src="dcr/about/1.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/2.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/3.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/4.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/5.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/6.jpg" alt="Cinque Terre" width="auto" height="350">
+      <img src="dcr/about/7.jpg" alt="Cinque Terre" width="auto" height="350">
+    </div>
+
+ </div>
+
+
+
+ <script>
+  window.addEventListener('mousemove', function(e) {
+      var arr = [1, 0.9, 0.8, 0.5, 0.2];
+      arr.forEach(function(i) {
+          var x = (1 - i) * 75;
+          var star = document.createElement('div');
+          star.className = 'star';
+          star.style.top = e.pageY + Math.round(Math.random() * x - x / 2) + 'px';
+          star.style.left = e.pageX + Math.round(Math.random() * x - x / 2) + 'px';
+          document.body.appendChild(star);
+          window.setTimeout(function() {
+              document.body.removeChild(star);
+          }, Math.round(Math.random() * i * 600));
+     });
+   }, false);
+  </script>
+ 
+</body>
+</html>
